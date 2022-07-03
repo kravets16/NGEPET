@@ -1,0 +1,19 @@
+.btn {
+    &-link {
+        padding: 12px 25px;
+        background: #FFA161;
+        border-radius: 6px;
+        color: #933A14;
+        transition: all .5s ease;
+        &:visited {
+            color: #933A14;
+        }
+        &:hover {
+            color: $main-color;
+            background: #da864f;
+        }
+        @media (max-width: 768px) {
+            padding: 12px 80px;
+        }
+    }
+}

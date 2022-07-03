@@ -1,0 +1,114 @@
+.header {
+    margin: 40px 0 0 0;
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav {
+        @media (max-width: 768px) {
+            /* display: none; */
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            
+            @media (max-width: 992px) {
+                gap: 25px;
+            }
+            @media (max-width: 798px) {
+                gap: 20px;
+            }
+            @media (max-width: 768px) {
+                position: absolute;
+                width: 320px;
+                padding: 20px 0;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                gap: 0;
+                background-color: rgba(6, 18, 32, 0.8);
+                transition: left .5s ease;
+                &-active {
+                    left: 0;
+                    transition: .5s ease ;
+                }
+            }
+        }
+        &-item {
+            &:nth-child(6) {
+                padding-left: 80px;
+                @media (max-width: 1200px) {
+                    padding-left: 60px;
+                }
+                @media (max-width: 992px) {
+                    padding-left: 0px;
+                }
+            }
+        }
+        &-link {
+            padding-top: 12px;
+            padding-bottom:12px;
+            position: relative;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.011em;
+            overflow: hidden;
+            white-space: nowrap;
+            &:visited {
+                color: $main-color;
+            }
+            @media (max-width: 768px) {
+                
+            }
+        }
+        &-line {
+            position: absolute;
+            left: -16px;
+            bottom: 4px;
+            width: 16px;
+            height: 2px;
+            background-color: $main-color;
+            transition: left .3s ease;
+        }
+        &-link:hover &-line {
+            left: 0;
+        }
+    }
+}
+.humburger {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 24px;
+    height: 24px;
+    top: 40px;
+    right: 24px;
+    span {
+        display:block;
+        width: 18px;
+        height: 2px;
+        background-color: $main-color;
+        margin: 5px auto;
+        transition: all .5s ease;
+    }
+    &-active {
+        span  {
+            &:nth-child(1) {
+                transform: rotate(-45deg);
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                margin: -7px auto;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        display: block;
+    }
+}

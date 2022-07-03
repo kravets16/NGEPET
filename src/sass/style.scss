@@ -1,0 +1,27 @@
+/* base */
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+
+/* blocks */
+@import 'blocks/btn';
+@import 'blocks/header';
+
+/* settings */
+body {
+    font-family: 'Mulish', sans-serif;
+    /* font-family: 'Montserrat'; */
+	font-style: normal;
+    color: $main-color;
+    background-color: #012651;
+}
+
+.container {
+    width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+   /*  background-color: rgb(88, 109, 102); */
+    @media (max-width: 1200px) {
+        max-width: 100%;
+    }
+}
